@@ -1,0 +1,315 @@
+/*RESET GENERAL*/
+
+/* Evita problemas con tamaños (padding no rompe el diseño) */
+* {
+    box-sizing: border-box;
+}
+
+/* Estilos base del sitio */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    line-height: 1.7; /* Espaciado entre líneas para mejor lectura */
+}
+
+/*HEADER (PARTE SUPERIOR)*/
+
+.header {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 80px 20px;
+    text-align: center;
+
+    /* centra logo y texto verticalmente */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Logo principal */
+.logo {
+    height: 120px;
+    margin-bottom: 20px;
+
+    /* invierte colores si el logo es oscuro sobre fondo negro */
+    filter: invert(1);
+}
+
+/* Título principal */
+.titulo h1 {
+    font-size: 3rem;
+    letter-spacing: 12px;
+    margin: 0;
+    font-weight: 700;
+}
+
+/* Subtítulo */
+.titulo p {
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+/*MENÚ DE NAVEGACIÓN*/
+
+.menu {
+    background-color: rgba(255, 255, 255, 0.9);
+
+    /* efecto vidrio (blur) */
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid #e0e0e0;
+    position: sticky;
+    top: 0;
+
+    text-align: center;
+    padding: 20px;
+    z-index: 1000; /* queda encima de todo */
+}
+
+/* enlaces del menú */
+.menu a {
+    color: #000;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: opacity 0.3s;
+}
+
+/* efecto al pasar mouse */
+.menu a:hover {
+    opacity: 0.5;
+}
+
+/*CONTENEDOR PRINCIPAL*/
+
+.main-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* separación entre secciones */
+.seccion {
+    margin-bottom: 100px;
+}
+
+/* títulos de sección */
+h2 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    border-bottom: 1px solid #1a1a1a;
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+/*PRODUCTOS (DETAILS)*/
+
+/* tarjeta de producto cerrada/abierta */
+details {
+    border: 1px solid #ececec;
+    border-radius: 14px;
+    padding: 25px;
+    margin-bottom: 25px;
+
+    background: #ffffff;
+
+    transition: all 0.3s ease;
+
+    /* sombra suave */
+    box-shadow: 0 5px 18px rgba(0,0,0,0.05);
+}
+
+/* animación al pasar mouse */
+details:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+}
+
+/* título del producto */
+summary {
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    transition: 0.3s ease;
+}
+
+/* efecto hover en título */
+summary:hover {
+    opacity: 0.6;
+}
+
+/* contenido interno del producto */
+.product-content {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/*IMÁGENES DE PRODUCTOS*/
+
+/* contenedor de imágenes */
+.product-images {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+/* caja individual de imagen */
+.img-box {
+    width: 180px;
+    height: 220px;
+    overflow: hidden;
+
+    border-radius: 14px;
+    background: #fff;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+
+    transition: all 0.4s ease;
+}
+
+/* imagen dentro de la caja */
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    filter: grayscale(100%);
+    transition: all 0.5s ease;
+}
+
+/* efecto hover en caja */
+.img-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.18);
+}
+
+/* efecto hover en imagen */
+.img-box:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.08);
+}
+
+/*TABLA DE PRODUCTOS */
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+/* tabla general */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+/* celdas */
+th, td {
+    text-align: left;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
+}
+
+/* encabezado */
+th {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #888;
+}
+
+/* efecto al pasar fila */
+table tr:hover {
+    background-color: #f7f7f7;
+    transition: 0.3s ease;
+}
+
+/* centra contenido verticalmente */
+td {
+    vertical-align: middle;
+}
+
+/*EQUIPO (GRID)*/
+
+/* layout tipo rejilla */
+.equipo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+}
+
+/* tarjeta de miembro */
+.miembro {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/* efecto hover tarjeta */
+.miembro:hover {
+    transform: translateY(-5px);
+}
+
+/* imagen del miembro */
+.miembro img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 12px;
+
+    filter: grayscale(100%);
+    transition: 0.5s ease;
+
+    /* sombra */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* hover imagen */
+.miembro img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.03);
+}
+
+/*FOOTER*/
+
+.footer {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    text-align: center;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: #7F8C8D;
+}
+
+/*RESPONSIVE (CELULAR)*/
+
+@media (max-width: 600px) {
+    .titulo h1 {
+        font-size: 1.8rem;
+        letter-spacing: 5px;
+    }
+
+    .menu a {
+        margin: 0 5px;
+        font-size: 0.7rem;
+    }
+}
